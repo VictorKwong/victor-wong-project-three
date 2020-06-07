@@ -1,0 +1,102 @@
+@import 'setup';
+@import 'setup-add-on';
+@import 'mixin';
+
+body{
+    font-family: lolita;
+}
+
+main{
+    @include bgr-imge('../images/Red.png',1352px);
+}
+
+h2{
+    line-height: 3.8rem; 
+}
+header section,
+.flexing{
+    display: flex;
+}
+header h1,
+header nav{
+    width: 50%;
+}
+header nav ul{
+    display: flex;
+    justify-content: end;
+}
+li{
+    list-style-type: none;
+    /* remove dots */
+}
+button:hover,
+button:focus{
+    background-color:wheat;
+}
+/* a{
+    text-decoration: none;
+    display: inline-block;
+    padding:30px;
+} */
+.styling-head-link{
+    display: flex;
+    align-items: center;
+    border: none;
+    text-transform: none;
+    height:3rem;
+    padding:0 2rem;
+}
+
+
+.style-text-u {
+    text-transform: uppercase;
+}
+
+.disappear{
+    display:none;
+}
+
+.hud-score,
+.hud-time{
+    display: flex;
+    flex-direction: column;
+    width: 50%; 
+}
+.hud-time{
+    text-align: right;
+}
+
+.j-math-question,
+.j-result,
+.j-thanks{
+    text-align: center;
+    font-size:4rem;
+}
+.j-math-question{
+    padding: 5vh 0;
+    max-width:35%;
+    margin:0 auto;
+}
+.j-result,
+.j-thanks{
+    padding: 2vh 0;
+}
+
+main section{
+    padding-top:5vh;
+}
+
+main form{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.hud-next {
+    padding-top: 2vh;
+    text-align: center;
+}
+.hud-start{
+    padding-top: 5vh;
+    text-align: center;
+}

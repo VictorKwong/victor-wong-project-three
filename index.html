@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Quiz</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv" crossorigin="anonymous">
+    <!-- Favicon -->
+    <link type="image/png" href="images/favicon-16x16.png" rel="icon">
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body>
+    <header>
+        <section class="wrapper">
+        <h1>Math Quiz</h1>
+        <nav>
+            <ul>
+                <li><button class="styling-head-link style-text-u">home</button></li>
+                <li><button class="styling-head-link style-text-u">game</button></li>
+                <li><button class="styling-head-link style-text-u">contact</button></li>
+            </ul>
+        </nav>
+        </section>
+    </header>
+    <main>
+        <section class="wrapper">
+            <div class="flexing">
+                <div class="hud-score">
+                    <p class="style-text-u disappear">score:</p>
+                    <p class="j-total-score"></p>
+                </div>
+                <div class="hud-time">
+                    <p class="style-text-u disappear">time:</p>
+                    <p class="j-timer style-text-u disappear">10 s</p>
+                </div>
+            </div>
+            <div class="hud-start">
+                <h2 class="j-hide">This is a math quiz game:</h2>
+                <h2 class="j-hide">Within each question, you will have 10 seconds to answer the question</h2>
+                <h2 class="j-hide">Have fun!</h2>
+                <button class="start">start the game</button>
+            </div>
+
+            <p class="j-math-question disappear">this is the question<span>x</span></p>
+            <p class="j-result disappear"></p>
+            <p class="j-thanks disappear"></p>
+
+            <form class="disappear">
+                <fieldset>
+                    <legend>find x: (One decimal place, Ex. 3➗4 = "0.8")</legend>
+                    <input class="j-form-answer" type="text" placeholder="Answer" maxlength="3">
+                    <input type="submit" value="Submit">
+                    <p class="j-hint"></p>
+                    <p class="j-correct-wrong"></p>
+                    <p class="j-show-answer"></p>
+                </fieldset>
+            </form>
+            <div class="hud-next">
+            <button class="j-next disappear">Next Question</button>
+            <button class="j-reset disappear">Restart!</button>
+            </div>
+        </section>
+    </main>
+
+
+    <script src='https://code.jquery.com/jquery-3.4.0.min.js' integrity='sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=' crossorigin='anonymous'></script>
+    <script src="js/script.js"></script>
+
+
+</body>
+</html>

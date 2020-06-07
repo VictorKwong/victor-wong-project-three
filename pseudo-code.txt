@@ -1,0 +1,19 @@
+/*
+
+* Math Quiz Game
+
+* A welcome page with title "Math Quiz Game", and have a start button
+
+* When the user click the button, it will scroll down and show html display a math question each time (x + y = z)
+
+* When the user submit the answer, Javascript will store the answer variable 
+
+* update score variable if the answer is right or wrong and move into next question
+
+* it will scroll down and show html display a math question each time (x + y = z) 
+
+* repeat the process * 3 (Result = 3 times)
+
+* After answer all math question, it will display total score and a comment of user result
+
+*/

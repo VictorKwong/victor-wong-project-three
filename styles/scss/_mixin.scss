@@ -1,0 +1,20 @@
+/* ,$l-spacing:normal */
+@mixin word-text($f-family,$f-weight,$f-size){
+    font-family:$f-family;
+    font-weight:$f-weight;
+    font-size:$f-size;
+} 
+@mixin bgr-imge($background-photo,$max-height) {
+    background-image: url($background-photo);
+    background-size: cover;
+    background-attachment: scroll;
+    background-position: center;
+    /*background setup*/
+    width:100%;
+    max-height: $max-height;
+    height:100vh;
+}
+
+@mixin pad-trbl($top,$right,$bottom,$left){
+    padding:$top $right $bottom $left;
+}
