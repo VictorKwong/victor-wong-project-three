@@ -69,7 +69,8 @@ mathApp.result = [
     "Nice!",
     "Super!",
     "Wonderful~",
-    "Aced it!"
+    "Aced it!",
+    "~Stage Clear~(Bonus)"
 ]
 
 mathApp.HowManyTimes = 0;
@@ -128,6 +129,7 @@ mathApp.timer = function() {
 
     /* button */
 mathApp.start = $('button.j-start').on('click',function(){
+    $('div.hud-score,div.hud-time').show();
     $('button.j-start,.j-hide').hide();
     mathApp.clear = setTimeout(mathApp.timer,10);
         /* random number 1 - 10 */
@@ -148,16 +150,10 @@ mathApp.start = $('button.j-start').on('click',function(){
 
 
 mathApp.continue = $('button.j-next').on('click',function(){
-    $(this).prop("disabled", true).hide();
+    $('button.j-next').prop("disabled", true).hide();
     $('p.j-hint').hide();
         if(mathApp.HowManyTimes === 4){
-            $("input").prop("disabled", true);
-            
-            $("p.j-math-question,button.j-next").hide();
-            $("p.j-result").hide().delay(800).slideDown(400).html(`Rating: ${mathApp.result[mathApp.TotalScore]}`);
-            let displayEmoj = mathApp.RandomSign(mathApp.emoj);
-            $("p.j-thanks").hide().delay(1500).slideDown(400).html(`Thanks for playing! ${displayEmoj} - Your Final Score: ${mathApp.TotalScore * 100}`);
-            $('.j-reset').hide().delay(2400).slideDown(400)
+            mathApp.reset();
         }else{
             timeRemain = 10;
             mathApp.clear = setTimeout(mathApp.timer,10);
@@ -165,7 +161,6 @@ mathApp.continue = $('button.j-next').on('click',function(){
             $('.j-correct-wrong').delay().slideUp(300);
             $('.j-show-answer').delay().slideUp(300);
             $("input").prop("disabled", false);
-            
             
             /* Rest */
             let y = (Math.floor(Math.random() * 10) + 1);
@@ -182,9 +177,28 @@ mathApp.continue = $('button.j-next').on('click',function(){
     mathApp.HowManyTimes++;
 });
 
+mathApp.reset = function(){
+    $('button.j-next').prop("disabled", true).hide();
+    $("input").prop("disabled", true);
+    $("p.j-math-question").hide();
+    $("p.j-result").addClass('space-btwn').hide().delay(300).slideDown(400).html(`Rating: ${mathApp.result[mathApp.TotalScore]}`);
+    let displayEmoj = mathApp.RandomSign(mathApp.emoj);
+    $("p.j-thanks").addClass('space-btwn').hide().delay(800).slideDown(400).html(`Thanks for playing! ${displayEmoj} - Your Final Score: ${mathApp.TotalScore * 100}`);
+    if(mathApp.TotalScore === 6){
+        $('img').hide().delay(1300).slideDown(400);
+        $(".j-bonus").prop("volume",0.25).trigger('play')
+    }
+    $('.j-reset').hide().delay(2300).slideDown(400);
+}
+
+$('.j-math-question').one('click',function(){
+    mathApp.scoreCount();
+    $("p.j-total-score").html(`${mathApp.TotalScore * 100}`);
+});
 
 $('.j-math-question').on('click',function(){
     let cashe = $('.j-math-question span')
+    
     if (cashe.html() == 'x'){
         cashe.html("Found you!");
     }else{
@@ -199,8 +213,9 @@ $('.j-reset').on('click',function(){
     mathApp.clear = setTimeout(mathApp.timer,10);
     clearTimeout(mathApp.clear);
     $("input").prop("disabled", false);
-    $('p.j-thanks,p.j-result,.j-reset,.j-correct-wrong,.j-show-answer,p.j-hint,button.j-next').hide();
-    $('p,form').addClass('disappear');
+    $('p.j-thanks,p.j-result').removeClass('space-btwn');
+    $('p.j-thanks,p.j-result,.j-reset,.j-correct-wrong,.j-show-answer,p.j-hint,button.j-next,img.image-price,div.hud-score,div.hud-time').hide();
+    $('form.j-target').addClass('disappear');
     $('button.j-start,.j-hide').show();
 });
 

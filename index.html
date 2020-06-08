@@ -6,7 +6,7 @@
     <title>Math Quiz</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv" crossorigin="anonymous">
     <!-- Favicon -->
-    <link type="image/png" href="images/favicon-16x16.png" rel="icon">
+    <link type="image/png" href="./images/favicon-16x16.png" rel="icon">
     <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
@@ -16,7 +16,7 @@
         <div class="block-right">
             <nav>
                 <label for="menu-set" class="hide"><i class="fa fa-bars"></i></label>
-                <input type="checkbox" id="menu-set" name="toggle">
+                <input type="checkbox" id="menu-set" name="toggle" class="menu-set-class">
                     <ul class="slide-menu">
                     <li><a href="#" class="styling-head-link style-text-u">home</a></li>
                     <li><a href="#" class="styling-head-link style-text-u">game</a></li>
@@ -51,8 +51,10 @@
                 <p class="j-math-question disappear">this is the question<span>x</span></p>
                 <p class="j-result disappear"></p>
                 <p class="j-thanks disappear"></p>
-
-                <form class="disappear">
+                <div class="image-flex">
+                <img src="./images/drake.gif" alt="Drake dance move pokemon version" class="disappear image-price">
+                </div>
+                <form class="disappear j-target">
                     <fieldset>
                         <legend>find x:(One decimal place,Ex.3➗4="0.8")</legend>
                         <input class="j-form-answer" type="text" placeholder="Answer" maxlength="3">
@@ -131,7 +133,7 @@
         <p>Copyright <i class="far fa-copyright"></i> 2020 Lemonekko</p>
     </footer>
 
-
+    <audio class="j-bonus" src="./music/drake.wav" type="audio/wav"></audio>
     <script src='https://code.jquery.com/jquery-3.4.0.min.js' integrity='sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=' crossorigin='anonymous'></script>
     <script src="js/script.js"></script>
 
