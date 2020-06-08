@@ -1,43 +1,107 @@
 @import 'setup';
 @import 'setup-add-on';
-@import 'mixin';
 
-body{
+$color-1: #fff5d7;
+$color-2: #dac5a5;
+$color-3: white;
+$color-w1: #a97042;
+$color-w2: black;
+
+
+
+h1{
+    font-size: 5rem;
+}
+
+h2{
+    font-size: 3rem;
+}
+h3{
+    font-size: 2.2rem;
+}
+p{
+    font-size: 1.7rem;
+}
+/* text */
+
+header{
+    overflow: hidden;
+    background-color:$color-3;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    border-bottom: 2px solid $color-w2;
+}
+
+a{
+    text-decoration: none;
+    color:$color-w2;
+}
+.hide{
+    display:none;
+    z-index: 3;
+}
+
+#menu-set{
+    opacity:0;
+    position: absolute;
+    left:-1000%;
+    top:-1000%;
+}
+
+body,button{
     font-family: lolita;
+    color: $color-w2;
 }
 
 main{
-    @include bgr-imge('../images/Red.png',1352px);
+    color:#291911;
 }
 
+
+.bgc-first{
+    background-color: $color-1;
+}
+
+.bgc-sec{
+    background-color: $color-2;
+}
 h2{
     line-height: 3.8rem; 
 }
 header section,
-.flexing{
+footer ul,
+header ul,
+.flexing,
+.flexing-top{
     display: flex;
 }
 header h1,
-header nav{
+header nav
+footer div{
     width: 50%;
 }
-header nav ul{
+
+.block-right{
+    width: 50%;
     display: flex;
-    justify-content: end;
+    justify-content: right;
+    align-items: center;
 }
+
 li{
     list-style-type: none;
     /* remove dots */
 }
 button:hover,
-button:focus{
-    background-color:wheat;
+button:focus,
+a:hover,
+a:focus{
+    background-color:rgb(212, 150, 127);
+    cursor: pointer;
 }
-/* a{
-    text-decoration: none;
-    display: inline-block;
-    padding:30px;
-} */
+
+
 .styling-head-link{
     display: flex;
     align-items: center;
@@ -57,11 +121,22 @@ button:focus{
 }
 
 .hud-score,
-.hud-time{
+.hud-time,
+.flex-adv{
     display: flex;
     flex-direction: column;
     width: 50%; 
 }
+
+.flex-adv{
+    justify-content: space-between;
+}
+
+.hud-score-init{
+    width:8rem;
+    text-align: right;
+}
+
 .hud-time{
     text-align: right;
 }
@@ -82,8 +157,9 @@ button:focus{
     padding: 2vh 0;
 }
 
-main section{
-    padding-top:5vh;
+main section:first-child{
+    padding-top:10vh;
+    border:2px solid $color-w2;
 }
 
 main form{
@@ -97,6 +173,279 @@ main form{
     text-align: center;
 }
 .hud-start{
-    padding-top: 5vh;
     text-align: center;
+}
+
+.button-decor{
+    border-radius: 5px;
+    background-color: orangered;
+    border: none;
+    color: $color-3;
+    text-align: center;
+    font-size:1.7em;
+    width:300px;
+    padding:20px;
+    transition: all 0.5;
+    cursor: pointer;
+    margin:10px;
+}
+
+.button-decor span{
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.button-decor:hover span,
+.button-decor:focus span {
+    padding-right: 25px;
+}
+
+.button-decor:hover span:after,
+.button-decor:focus span:after{
+    opacity: 1;
+    right: 0;
+}
+
+
+
+.button-decor span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    right: -20px;
+    top: 0;
+    transition: 0.5s;
+  }
+
+.box-holder-small{
+    width: 40%;
+}
+
+.image-control{
+    width: 100%;
+    height: 300px;
+    max-width: 100%;
+    display: inline-block;
+}
+
+.box-holder-large{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.box-space-adj{
+    padding:0 30px;
+}
+
+.features{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+    height:200px;
+}
+
+footer{
+    background-color:$color-2;
+}
+
+
+footer li{
+    margin-right: 2rem;
+}
+footer a{
+    text-decoration: none;
+    display: inline-block;
+    color: $color-w2;
+    padding:0 10px;
+}
+footer>p{
+    background-color: #24140c;
+    text-align: center;
+    color: $color-w1;
+}
+
+input[type="email"]{
+    width: 60%;
+    height: 50px;
+    padding: 0 0 0 20px;
+}
+
+
+
+.q-grab{
+    border:none;
+    color:$color-3;
+    background-color: $color-w2;
+    height:25px;
+}
+.email-grab{
+    border:none;
+    color:$color-3;
+    background-color: $color-w2;
+    width: 20%;
+    height: 50px;
+}
+.h-fix{
+    padding: 10vh 0 15vh 0;
+}
+
+.sub-h{
+    padding-bottom: 10px;
+}
+
+.p-space-h{
+    line-height: 3rem;
+}
+
+.seq{
+    order:2;
+}
+
+
+@media (max-width:1100px){
+    footer .flexing{
+        display: initial;
+        text-align: center;
+    }
+    .flex-adv{
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
+    footer ul {
+        display: flex;
+        justify-content: center;
+        padding:2.5rem 0;
+    }
+    .media-h{
+        padding-bottom:25px;
+    }
+    .flex-adv-box{
+        width:50%;
+        padding-bottom: 3rem;
+    }
+}
+@media (max-width:768px){
+    .box-holder-small{
+        width:45%;
+    }
+    .box-holder-large{
+        width:55%;
+    }
+    .wrapper{
+        width:100%;
+    }
+    .flex-adv-box{
+        width:100%;
+    }
+    .j-math-question{
+        font-size: 2.5rem;
+        padding:3vh 0;
+    }
+}
+@media (max-width:600px){
+    header h1{
+        width: 100%;
+    }
+    .block-right{
+        width: initial;
+    }
+    .flexing{
+        display: initial;
+    }
+    .seq{
+        order:0;
+    }
+    .box-holder-small,
+    .box-holder-large{
+        width: 100%;
+    }
+    .box-space-adj{
+        padding:30px;
+        text-align: center;
+    }
+    h2{
+        font-size: 2.5rem;
+    }
+    h3{
+        font-size: 1.9rem;
+    }
+    .j-result,
+    .j-thanks{
+        font-size: 2.5rem;
+    }
+    /* add slide-menu */
+    header > section > nav > ul,
+    .hide{
+        display: initial;
+    }
+    nav a{
+        font-size: 15px;
+        margin:auto;
+    }
+    header label {
+        position:fixed;
+        top:11px;
+        right:11px;
+    }
+    .slide-menu {
+        position: fixed;
+        right: 0;
+        background-color: $color-2;
+        width:20%;
+        height:100vh;
+        font-size:1rem;
+        z-index:2;
+        transition:all 0.3s 0s ease-in-out;
+        opacity:0.7;
+    }
+
+    .slide-menu li{
+        border-bottom: 1px solid $color-w2;
+        width:100%;
+    }
+    
+    #menu-set + .slide-menu{
+        right:-20%;
+    }
+
+    #menu-set:checked + .slide-menu{
+        right:0;
+    }
+    
+    nav:first-child a{
+        width:100%;
+        padding:10px
+    }
+
+/* ---------------- */
+
+    header li{
+        transition:all 0.3s ease-in-out;
+    }
+    
+    header li:hover,
+    header li:focus{
+        background-color:rgb(212, 150, 127);
+        width:100%
+    }
+
+    header ul{
+        display:initial;
+    }
+    
+}
+@media (max-width:500px){
+    footer li{
+        margin-right: 0.5rem;
+    }
+    footer nav>a{
+        font-size: 1rem;
+    }
+
 }
