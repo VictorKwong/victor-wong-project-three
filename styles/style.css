@@ -258,8 +258,7 @@ p,
 li,
 a,
 img,
-figure,
-border {
+figure {
   margin: 0;
   padding: 0;
 }
@@ -568,6 +567,7 @@ footer > p {
   background-color: #24140c;
   text-align: center;
   color: #a97042;
+  font-family: sans-serif;
 }
 
 input[type="email"] {
