@@ -226,6 +226,11 @@ $(function () {
     });
 });
 
+$('h1').on('click',function(){
+        location.reload(true);
+});
+
+
 mathApp.init = function(){
     mathApp.userAnswer = mathApp.userQuestion();
     mathApp.start;
