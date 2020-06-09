@@ -219,6 +219,13 @@ $('.j-reset').on('click',function(){
     $('button.j-start,.j-hide').show();
 });
 
+$(function () {
+
+    $('a').smoothScroll({
+        speed: 300
+    });
+});
+
 mathApp.init = function(){
     mathApp.userAnswer = mathApp.userQuestion();
     mathApp.start;
